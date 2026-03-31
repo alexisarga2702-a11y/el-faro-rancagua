@@ -3,127 +3,177 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Tipografía externa (Google Fonts) -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
     <title>El Faro Rancagua</title>
+
+    <style>
+        /* Estilo general del sitio */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            list-style: none;
+            padding: 0;
+        }
+
+        /* Estilo enlaces */
+        a {
+            text-decoration: underline;
+        }
+
+        a:hover {
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        /* CONTENEDOR DE ARTÍCULOS EN GRID */
+        .contenedor {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding: 20px;
+        }
+
+        /* BLOQUES DE ARTÍCULOS */
+        article {
+            background-color: white;
+            padding: 15px;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+
+        /* HOVER */
+        article:hover {
+            background-color: black;
+            color: white;
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: #c9d2d0;
+            color: #31231e;
+            text-align: center;
+            padding: 15px;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 600px) {
+            .contenedor {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
+
 <body>
 
-    <header>
-        <h1>El Faro Rancagua</h1>
-        <img src="https://via.placeholder.com/150x100.png?text=Logo+El+Faro" alt="Logo El Faro Rancagua">
-        <p>Periódico digital local con noticias de Rancagua y esports</p>
-    </header>
+<header>
+    <h1>El Faro Rancagua</h1>
+    <img src="https://via.placeholder.com/150x100.png?text=Logo+El+Faro">
+    <p>Periódico digital local con noticias de Rancagua y esports</p>
+</header>
 
-    <nav>
-        <ul>
-            <li><a href="#inicio">Inicio</a></li>
-            <li><a href="#deporte">Deporte</a></li>
-            <li><a href="#negocios">Negocios</a></li>
-        </ul>
-    </nav>
+<nav>
+    <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#deporte">Deporte</a></li>
+        <li><a href="#negocios">Negocios</a></li>
+    </ul>
+</nav>
 
-    <main>
+<main>
 
-        <section id="inicio">
-            <h2>Noticias Generales</h2>
+<!-- NOTICIAS GENERALES -->
+<section id="inicio">
+    <h2>Noticias Generales</h2>
 
-            <table border="1">
-                <tr>
-                    <th>Título</th>
-                    <th>Categoría</th>
-                    <th>Texto</th>
-                </tr>
-                <tr>
-                    <td>Rancagua impulsa actividades juveniles</td>
-                    <td>Comunidad</td>
-                    <td>La comuna de Rancagua sigue promoviendo actividades para jóvenes, incluyendo talleres tecnológicos y recreativos.</td>
-                </tr>
-                <tr>
-                    <td>Más interés por los esports en la región</td>
-                    <td>Tecnología</td>
-                    <td>Cada vez más estudiantes de Rancagua muestran interés por los videojuegos competitivos, especialmente por Valorant.</td>
-                </tr>
-                <tr>
-                    <td>Eventos locales reúnen a fanáticos del gaming</td>
-                    <td>Actualidad</td>
-                    <td>Distintos eventos juveniles han reunido a personas interesadas en los esports, creando espacios de convivencia y entretenimiento.</td>
-                </tr>
-            </table>
+    <div class="contenedor">
 
-            <h3>Video</h3>
-            <iframe width="400" height="225"
-                src="https://www.youtube.com/embed/XFctKmuBs1Q?start=19"
-                title="Video de YouTube"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen>
-            </iframe>
+        <article>
+            <h3>Rancagua impulsa actividades juveniles</h3>
+            <p>La comuna promueve talleres tecnológicos y recreativos.</p>
+        </article>
 
-            <h3>Audio</h3>
-            <audio controls>
-                <source src="audio.mp3" type="audio/mpeg">
-                Tu navegador no soporta audio.
-            </audio>
-        </section>
+        <article>
+            <h3>Más interés por los esports</h3>
+            <p>Estudiantes se interesan en juegos como Valorant.</p>
+        </article>
 
-        <section id="deporte">
-            <h2>Deportes y Esports</h2>
+        <article>
+            <h3>Eventos de gaming</h3>
+            <p>Eventos reúnen fanáticos del gaming en la región.</p>
+        </article>
 
-            <table border="1">
-                <tr>
-                    <th>Título</th>
-                    <th>Categoría</th>
-                    <th>Texto</th>
-                </tr>
-                <tr>
-                    <td>Valorant sigue creciendo entre los jóvenes</td>
-                    <td>Esports</td>
-                    <td>Valorant se ha transformado en uno de los juegos competitivos más populares entre jóvenes de Rancagua y otras ciudades de Chile.</td>
-                </tr>
-                <tr>
-                    <td>Torneos amateur llaman la atención</td>
-                    <td>Esports</td>
-                    <td>Los torneos de Valorant a nivel amateur permiten que nuevos jugadores puedan mostrar su talento y competir con otros equipos.</td>
-                </tr>
-                <tr>
-                    <td>Equipos escolares se interesan en competir</td>
-                    <td>Esports</td>
-                    <td>Algunos estudiantes han comenzado a organizar equipos para practicar y participar en competencias de videojuegos como Valorant.</td>
-                </tr>
-            </table>
-        </section>
+    </div>
+</section>
 
-        <section id="negocios">
-            <h2>Negocios y Emprendimientos</h2>
+<!-- DEPORTES -->
+<section id="deporte">
+    <h2>Deportes y Esports</h2>
 
-            <table border="1">
-                <tr>
-                    <th>Título</th>
-                    <th>Categoría</th>
-                    <th>Texto</th>
-                </tr>
-                <tr>
-                    <td>Tiendas gamer aumentan su popularidad</td>
-                    <td>Emprendimiento</td>
-                    <td>Locales y tiendas online relacionadas con accesorios gamer han aumentado su presencia en la región de O’Higgins.</td>
-                </tr>
-                <tr>
-                    <td>El gaming abre nuevas oportunidades</td>
-                    <td>Negocios</td>
-                    <td>El interés por los esports ha generado oportunidades para venta de periféricos, organización de eventos y creación de contenido digital.</td>
-                </tr>
-                <tr>
-                    <td>Jóvenes buscan emprender con contenido digital</td>
-                    <td>Innovación</td>
-                    <td>Muchos jóvenes de Rancagua ven en el streaming, los videos y los esports una opción para desarrollar proyectos propios.</td>
-                </tr>
-            </table>
-        </section>
+    <div class="contenedor">
 
-    </main>
+        <article>
+            <h3>Valorant crece</h3>
+            <p>Juego competitivo muy popular en jóvenes.</p>
+        </article>
 
-    <footer>
-        <p>El Faro Rancagua - Periódico digital local</p>
-    </footer>
+        <article>
+            <h3>Torneos amateur</h3>
+            <p>Nuevos jugadores compiten en torneos locales.</p>
+        </article>
+
+        <article>
+            <h3>Equipos escolares</h3>
+            <p>Estudiantes crean equipos para competir.</p>
+        </article>
+
+    </div>
+</section>
+
+<!-- NEGOCIOS -->
+<section id="negocios">
+    <h2>Negocios y Emprendimientos</h2>
+
+    <div class="contenedor">
+
+        <article>
+            <h3>Tiendas gamer</h3>
+            <p>Aumenta la venta de productos gamer.</p>
+        </article>
+
+        <article>
+            <h3>Oportunidades en gaming</h3>
+            <p>Los esports generan nuevos negocios.</p>
+        </article>
+
+        <article>
+            <h3>Streaming</h3>
+            <p>Jóvenes crean contenido digital.</p>
+        </article>
+
+    </div>
+</section>
+
+</main>
+
+<footer>
+    <p>El Faro Rancagua - Periódico digital local</p>
+</footer>
 
 </body>
 </html>
