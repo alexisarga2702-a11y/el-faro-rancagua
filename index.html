@@ -20,6 +20,13 @@
         header {
             text-align: center;
             padding: 20px;
+            background-color: #dbe4e2;
+        }
+
+        #fechaHora {
+            margin-top: 10px;
+            font-size: 18px;
+            font-weight: bold;
         }
 
         nav ul {
@@ -33,6 +40,7 @@
         /* Estilo enlaces */
         a {
             text-decoration: underline;
+            color: black;
         }
 
         a:hover {
@@ -40,12 +48,16 @@
             text-decoration: none;
         }
 
+        section {
+            padding: 20px;
+        }
+
         /* CONTENEDOR DE ARTÍCULOS EN GRID */
         .contenedor {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 20px;
-            padding: 20px;
+            padding: 20px 0;
         }
 
         /* BLOQUES DE ARTÍCULOS */
@@ -62,6 +74,62 @@
             color: white;
         }
 
+        .contador {
+            background-color: #ffffff;
+            display: inline-block;
+            padding: 8px 14px;
+            border-radius: 8px;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        .formulario {
+            background-color: white;
+            margin: 20px;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .formulario label {
+            display: block;
+            margin-top: 10px;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .formulario input,
+        .formulario textarea,
+        .formulario select,
+        .formulario button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .formulario textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .formulario button {
+            background-color: #c9d2d0;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .formulario button:hover {
+            background-color: #31231e;
+            color: white;
+        }
+
+        .mensaje {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
         /* FOOTER */
         footer {
             background-color: #c9d2d0;
@@ -75,6 +143,11 @@
             .contenedor {
                 grid-template-columns: 1fr;
             }
+
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
         }
     </style>
 </head>
@@ -83,8 +156,9 @@
 
 <header>
     <h1>El Faro Rancagua</h1>
-    <img src="https://via.placeholder.com/150x100.png?text=Logo+El+Faro">
+    <img src="https://via.placeholder.com/150x100.png?text=Logo+El+Faro" alt="Logo El Faro Rancagua">
     <p>Periódico digital local con noticias de Rancagua y esports</p>
+    <div id="fechaHora"></div>
 </header>
 
 <nav>
@@ -92,6 +166,8 @@
         <li><a href="#inicio">Inicio</a></li>
         <li><a href="#deporte">Deporte</a></li>
         <li><a href="#negocios">Negocios</a></li>
+        <li><a href="#nuevoArticulo">Agregar artículo</a></li>
+        <li><a href="#contacto">Contacto</a></li>
     </ul>
 </nav>
 
@@ -100,8 +176,9 @@
 <!-- NOTICIAS GENERALES -->
 <section id="inicio">
     <h2>Noticias Generales</h2>
+    <div class="contador" id="contador-inicio">Cantidad de artículos: 0</div>
 
-    <div class="contenedor">
+    <div class="contenedor" id="contenedor-inicio">
 
         <article>
             <h3>Rancagua impulsa actividades juveniles</h3>
@@ -124,8 +201,9 @@
 <!-- DEPORTES -->
 <section id="deporte">
     <h2>Deportes y Esports</h2>
+    <div class="contador" id="contador-deporte">Cantidad de artículos: 0</div>
 
-    <div class="contenedor">
+    <div class="contenedor" id="contenedor-deporte">
 
         <article>
             <h3>Valorant crece</h3>
@@ -148,8 +226,9 @@
 <!-- NEGOCIOS -->
 <section id="negocios">
     <h2>Negocios y Emprendimientos</h2>
+    <div class="contador" id="contador-negocios">Cantidad de artículos: 0</div>
 
-    <div class="contenedor">
+    <div class="contenedor" id="contenedor-negocios">
 
         <article>
             <h3>Tiendas gamer</h3>
@@ -169,11 +248,137 @@
     </div>
 </section>
 
+<!-- FORMULARIO PARA AGREGAR ARTÍCULO -->
+<section id="nuevoArticulo">
+    <h2>Agregar nuevo artículo</h2>
+
+    <form class="formulario" id="formArticulo">
+        <label for="seccion">Sección del artículo</label>
+        <select id="seccion" required>
+            <option value="">Seleccione una sección</option>
+            <option value="inicio">Noticias Generales</option>
+            <option value="deporte">Deportes y Esports</option>
+            <option value="negocios">Negocios y Emprendimientos</option>
+        </select>
+
+        <label for="titulo">Título del artículo</label>
+        <input type="text" id="titulo" required>
+
+        <label for="descripcion">Descripción del artículo</label>
+        <textarea id="descripcion" required></textarea>
+
+        <button type="submit">Agregar artículo</button>
+
+        <div class="mensaje" id="mensajeArticulo"></div>
+    </form>
+</section>
+
+<!-- FORMULARIO DE CONTACTO -->
+<section id="contacto">
+    <h2>Formulario de contacto</h2>
+
+    <form class="formulario" id="formContacto">
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" required>
+
+        <label for="mensaje">Mensaje</label>
+        <textarea id="mensaje" required></textarea>
+
+        <button type="submit">Enviar</button>
+
+        <div class="mensaje" id="respuestaContacto"></div>
+    </form>
+</section>
+
 </main>
 
 <footer>
     <p>El Faro Rancagua - Periódico digital local</p>
 </footer>
+
+<script>
+    function actualizarFechaHora() {
+        const ahora = new Date();
+
+        const dias = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"];
+        const meses = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"];
+
+        let dia = dias[ahora.getDay()];
+        let numeroDia = ahora.getDate();
+        let mes = meses[ahora.getMonth()];
+        let año = ahora.getFullYear();
+
+        let horas = ahora.getHours().toString().padStart(2, "0");
+        let minutos = ahora.getMinutes().toString().padStart(2, "0");
+        let segundos = ahora.getSeconds().toString().padStart(2, "0");
+
+        document.getElementById("fechaHora").textContent =
+            `${dia}, ${numeroDia} de ${mes} de ${año} - ${horas}:${minutos}:${segundos}`;
+    }
+
+    setInterval(actualizarFechaHora, 1000);
+    actualizarFechaHora();
+
+    function actualizarContadores() {
+        const inicio = document.querySelectorAll("#contenedor-inicio article").length;
+        const deporte = document.querySelectorAll("#contenedor-deporte article").length;
+        const negocios = document.querySelectorAll("#contenedor-negocios article").length;
+
+        document.getElementById("contador-inicio").textContent = "Cantidad de artículos: " + inicio;
+        document.getElementById("contador-deporte").textContent = "Cantidad de artículos: " + deporte;
+        document.getElementById("contador-negocios").textContent = "Cantidad de artículos: " + negocios;
+    }
+
+    actualizarContadores();
+
+    document.getElementById("formArticulo").addEventListener("submit", function(e) {
+        e.preventDefault();
+
+        const seccion = document.getElementById("seccion").value;
+        const titulo = document.getElementById("titulo").value.trim();
+        const descripcion = document.getElementById("descripcion").value.trim();
+        const mensajeArticulo = document.getElementById("mensajeArticulo");
+
+        if (seccion === "" || titulo === "" || descripcion === "") {
+            mensajeArticulo.textContent = "Debe completar todos los campos.";
+            return;
+        }
+
+        const nuevoArticulo = document.createElement("article");
+
+        const nuevoTitulo = document.createElement("h3");
+        nuevoTitulo.textContent = titulo;
+
+        const nuevaDescripcion = document.createElement("p");
+        nuevaDescripcion.textContent = descripcion;
+
+        nuevoArticulo.appendChild(nuevoTitulo);
+        nuevoArticulo.appendChild(nuevaDescripcion);
+
+        document.getElementById("contenedor-" + seccion).appendChild(nuevoArticulo);
+
+        mensajeArticulo.textContent = "Artículo agregado correctamente.";
+        document.getElementById("formArticulo").reset();
+
+        actualizarContadores();
+    });
+
+    document.getElementById("formContacto").addEventListener("submit", function(e) {
+        e.preventDefault();
+
+        const nombre = document.getElementById("nombre").value.trim();
+        const mensaje = document.getElementById("mensaje").value.trim();
+        const respuesta = document.getElementById("respuestaContacto");
+
+        if (nombre === "" || mensaje === "") {
+            respuesta.textContent = "Debe completar todos los campos del formulario de contacto.";
+            return;
+        }
+
+        respuesta.textContent = "Mensaje enviado correctamente. Gracias por contactarte con El Faro, " + nombre + ".";
+        document.getElementById("formContacto").reset();
+    });
+</script>
 
 </body>
 </html>
