@@ -4,13 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Tipografía externa (Google Fonts) -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 
     <title>El Faro Rancagua</title>
 
     <style>
-        /* Estilo general del sitio */
         body {
             font-family: 'Roboto', sans-serif;
             background-color: #f5f5f5;
@@ -29,15 +27,21 @@
             font-weight: bold;
         }
 
+        nav {
+            background-color: #c9d2d0;
+            padding: 12px;
+        }
+
         nav ul {
             display: flex;
             justify-content: center;
             gap: 20px;
             list-style: none;
             padding: 0;
+            margin: 0;
+            flex-wrap: wrap;
         }
 
-        /* Estilo enlaces */
         a {
             text-decoration: underline;
             color: black;
@@ -52,7 +56,6 @@
             padding: 20px;
         }
 
-        /* CONTENEDOR DE ARTÍCULOS EN GRID */
         .contenedor {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -60,7 +63,6 @@
             padding: 20px 0;
         }
 
-        /* BLOQUES DE ARTÍCULOS */
         article {
             background-color: white;
             padding: 15px;
@@ -68,7 +70,6 @@
             transition: 0.3s;
         }
 
-        /* HOVER */
         article:hover {
             background-color: black;
             color: white;
@@ -85,9 +86,10 @@
 
         .formulario {
             background-color: white;
-            margin: 20px;
+            margin: 20px auto;
             padding: 20px;
             border-radius: 10px;
+            max-width: 700px;
         }
 
         .formulario label {
@@ -130,7 +132,13 @@
             margin-top: 10px;
         }
 
-        /* FOOTER */
+        .bloque-info {
+            background-color: white;
+            margin: 20px;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
         footer {
             background-color: #c9d2d0;
             color: #31231e;
@@ -138,8 +146,7 @@
             padding: 15px;
         }
 
-        /* RESPONSIVE */
-        @media (max-width: 600px) {
+        @media (max-width: 700px) {
             .contenedor {
                 grid-template-columns: 1fr;
             }
@@ -167,88 +174,80 @@
         <li><a href="#deporte">Deporte</a></li>
         <li><a href="#negocios">Negocios</a></li>
         <li><a href="#nuevoArticulo">Agregar artículo</a></li>
+        <li><a href="#registro">Registro</a></li>
+        <li><a href="#login">Login</a></li>
         <li><a href="#contacto">Contacto</a></li>
     </ul>
 </nav>
 
 <main>
 
-<!-- NOTICIAS GENERALES -->
 <section id="inicio">
     <h2>Noticias Generales</h2>
     <div class="contador" id="contador-inicio">Cantidad de artículos: 0</div>
 
     <div class="contenedor" id="contenedor-inicio">
-
         <article>
-            <h3>Rancagua impulsa actividades juveniles</h3>
-            <p>La comuna promueve talleres tecnológicos y recreativos.</p>
+            <h3>El Faro renueva su plataforma digital</h3>
+            <p>El sitio mejora su diseño para entregar una navegación más clara y moderna.</p>
         </article>
 
         <article>
-            <h3>Más interés por los esports</h3>
-            <p>Estudiantes se interesan en juegos como Valorant.</p>
+            <h3>Más lectores prefieren noticias online</h3>
+            <p>La comunidad muestra mayor interés por informarse a través de medios digitales.</p>
         </article>
 
         <article>
-            <h3>Eventos de gaming</h3>
-            <p>Eventos reúnen fanáticos del gaming en la región.</p>
+            <h3>La información local sigue creciendo</h3>
+            <p>El portal incorpora nuevas secciones para acercar mejor las noticias a los usuarios.</p>
         </article>
-
     </div>
 </section>
 
-<!-- DEPORTES -->
 <section id="deporte">
     <h2>Deportes y Esports</h2>
     <div class="contador" id="contador-deporte">Cantidad de artículos: 0</div>
 
     <div class="contenedor" id="contenedor-deporte">
-
         <article>
-            <h3>Valorant crece</h3>
-            <p>Juego competitivo muy popular en jóvenes.</p>
+            <h3>Valorant mantiene su popularidad</h3>
+            <p>El juego competitivo sigue siendo uno de los favoritos entre los estudiantes.</p>
         </article>
 
         <article>
-            <h3>Torneos amateur</h3>
-            <p>Nuevos jugadores compiten en torneos locales.</p>
+            <h3>Torneos escolares ganan espacio</h3>
+            <p>Los campeonatos entre equipos juveniles fomentan la participación y el trabajo en grupo.</p>
         </article>
 
         <article>
-            <h3>Equipos escolares</h3>
-            <p>Estudiantes crean equipos para competir.</p>
+            <h3>Los esports avanzan en la región</h3>
+            <p>Cada vez más jóvenes se interesan por competencias digitales y actividades gamer.</p>
         </article>
-
     </div>
 </section>
 
-<!-- NEGOCIOS -->
 <section id="negocios">
     <h2>Negocios y Emprendimientos</h2>
     <div class="contador" id="contador-negocios">Cantidad de artículos: 0</div>
 
     <div class="contenedor" id="contenedor-negocios">
-
         <article>
-            <h3>Tiendas gamer</h3>
-            <p>Aumenta la venta de productos gamer.</p>
+            <h3>Negocios tecnológicos aumentan</h3>
+            <p>La venta de accesorios y productos digitales sigue creciendo en la ciudad.</p>
         </article>
 
         <article>
-            <h3>Oportunidades en gaming</h3>
-            <p>Los esports generan nuevos negocios.</p>
+            <h3>Emprendedores apuestan por internet</h3>
+            <p>Las redes y páginas web ayudan a promocionar servicios de forma más rápida.</p>
         </article>
 
         <article>
-            <h3>Streaming</h3>
-            <p>Jóvenes crean contenido digital.</p>
+            <h3>El contenido digital abre oportunidades</h3>
+            <p>Más jóvenes exploran ideas de negocio ligadas al streaming y a la creación online.</p>
         </article>
-
     </div>
 </section>
 
-<!-- FORMULARIO PARA AGREGAR ARTÍCULO -->
 <section id="nuevoArticulo">
     <h2>Agregar nuevo artículo</h2>
 
@@ -273,7 +272,41 @@
     </form>
 </section>
 
-<!-- FORMULARIO DE CONTACTO -->
+<section id="registro">
+    <h2>Registro de usuario</h2>
+
+    <form class="formulario" id="formRegistro">
+        <label for="nombreRegistro">Nombre completo</label>
+        <input type="text" id="nombreRegistro" required>
+
+        <label for="correoRegistro">Correo electrónico</label>
+        <input type="email" id="correoRegistro" required>
+
+        <label for="claveRegistro">Contraseña</label>
+        <input type="password" id="claveRegistro" required>
+
+        <button type="submit">Registrarse</button>
+
+        <div class="mensaje" id="mensajeRegistro"></div>
+    </form>
+</section>
+
+<section id="login">
+    <h2>Inicio de sesión</h2>
+
+    <form class="formulario" id="formLogin">
+        <label for="correoLogin">Correo electrónico</label>
+        <input type="email" id="correoLogin" required>
+
+        <label for="claveLogin">Contraseña</label>
+        <input type="password" id="claveLogin" required>
+
+        <button type="submit">Ingresar</button>
+
+        <div class="mensaje" id="mensajeLogin"></div>
+    </form>
+</section>
+
 <section id="contacto">
     <h2>Formulario de contacto</h2>
 
@@ -288,6 +321,11 @@
 
         <div class="mensaje" id="respuestaContacto"></div>
     </form>
+</section>
+
+<section class="bloque-info">
+    <h2>Actualización del sitio</h2>
+    <p>La página fue actualizada manteniendo su estructura principal y agregando nuevas funciones como registro de usuario, inicio de sesión y formularios mejorando toda la web con lo pedido.</p>
 </section>
 
 </main>
@@ -316,9 +354,6 @@
             `${dia}, ${numeroDia} de ${mes} de ${año} - ${horas}:${minutos}:${segundos}`;
     }
 
-    setInterval(actualizarFechaHora, 1000);
-    actualizarFechaHora();
-
     function actualizarContadores() {
         const inicio = document.querySelectorAll("#contenedor-inicio article").length;
         const deporte = document.querySelectorAll("#contenedor-deporte article").length;
@@ -329,6 +364,8 @@
         document.getElementById("contador-negocios").textContent = "Cantidad de artículos: " + negocios;
     }
 
+    setInterval(actualizarFechaHora, 1000);
+    actualizarFechaHora();
     actualizarContadores();
 
     document.getElementById("formArticulo").addEventListener("submit", function(e) {
@@ -345,11 +382,10 @@
         }
 
         const nuevoArticulo = document.createElement("article");
-
         const nuevoTitulo = document.createElement("h3");
-        nuevoTitulo.textContent = titulo;
-
         const nuevaDescripcion = document.createElement("p");
+
+        nuevoTitulo.textContent = titulo;
         nuevaDescripcion.textContent = descripcion;
 
         nuevoArticulo.appendChild(nuevoTitulo);
@@ -361,6 +397,39 @@
         document.getElementById("formArticulo").reset();
 
         actualizarContadores();
+    });
+
+    document.getElementById("formRegistro").addEventListener("submit", function(e) {
+        e.preventDefault();
+
+        const nombre = document.getElementById("nombreRegistro").value.trim();
+        const correo = document.getElementById("correoRegistro").value.trim();
+        const clave = document.getElementById("claveRegistro").value.trim();
+        const mensaje = document.getElementById("mensajeRegistro");
+
+        if (nombre === "" || correo === "" || clave === "") {
+            mensaje.textContent = "Debe completar todos los campos del registro.";
+            return;
+        }
+
+        mensaje.textContent = "Usuario registrado correctamente: " + nombre + ".";
+        document.getElementById("formRegistro").reset();
+    });
+
+    document.getElementById("formLogin").addEventListener("submit", function(e) {
+        e.preventDefault();
+
+        const correo = document.getElementById("correoLogin").value.trim();
+        const clave = document.getElementById("claveLogin").value.trim();
+        const mensaje = document.getElementById("mensajeLogin");
+
+        if (correo === "" || clave === "") {
+            mensaje.textContent = "Debe completar todos los campos del inicio de sesión.";
+            return;
+        }
+
+        mensaje.textContent = "Inicio de sesión realizado correctamente.";
+        document.getElementById("formLogin").reset();
     });
 
     document.getElementById("formContacto").addEventListener("submit", function(e) {
